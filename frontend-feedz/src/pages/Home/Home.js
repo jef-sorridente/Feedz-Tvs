@@ -3,7 +3,7 @@ import "./Home.css";
 // Components
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
-import {RiImageAddFill} from "react-icons/ri"
+import { RiImageAddFill } from "react-icons/ri";
 
 const Home = () => {
   {
@@ -31,30 +31,27 @@ const Home = () => {
   }
 
   return (
-    <div className="container-home">
-      <div className="container-home-box">
-        <div className="profile">
-          <div className="">
-            <img src="" />
-            <Link to={"/login"}>Clique aqui</Link>
-          </div>
-          <p>Bio</p>
+    <div className="container-gallery">
+      <div className="profile">
+        <div className="img">
+          <div className="img-real"></div>
         </div>
-        <div className="photos">
-          <h2>Fotos</h2>
-          <div className="photos-container">
-            <div className="photo">Foto Teste</div>
-            <div className="photo">Foto Teste</div>
-            <div className="photo">Foto Teste</div>
-            <div className="photo">Foto Teste</div>
-            <div className="photo">Foto Teste</div>
-            <label htmlFor="add-file" className="photo add-photo">
-              <p>Adicionar</p>
-              <RiImageAddFill/>
-            </label>
-            <input type="file"id="add-file"/>
-          </div>
+        <div className="profile-info">
+          <h2>Nome do Cabra</h2>
+          <p>Biografia do Cabra</p>
+          <p>Cargo do Cabra</p>
         </div>
+      </div>
+      <div className="galley-title">
+        <h2>Fotos Publicadas</h2>
+        <RiImageAddFill />
+      </div>
+      <div className="gallery">
+        <div>Foto Teste</div>
+        <div>Foto Teste</div>
+        <div>Foto Teste</div>
+        <div>Foto Teste</div>
+        <div>Foto Teste</div>
       </div>
     </div>
   );

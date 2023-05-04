@@ -1,64 +1,81 @@
-.primaria {
-  background-color: aqua;
-}
-.secundaria {
-  background-color: blueviolet;
-}
-
-.container-home {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 3%;
-}
-.container-home-box {
+.container-gallery {
   background-color: #fff;
+  margin: 25px;
+  padding: 0 2%;
   border-radius: 25px;
-  box-shadow: -5px 5px 5px #00000033;
-  width: 97%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  text-align: center;
 }
-.profile {
-  margin-top: 25px;
-  width: 75%;
-  border-bottom: 4px solid #f9131f;
+.container-gallery h2 {
+  margin-bottom: 25px;
 }
-
-.photos {
-  padding: 25px;
-  width: 75%;
-}
-
-.photos-container {
+.gallery {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 15px;
+  gap: 20px;
+  padding-bottom: 2%;
+  margin-top: 50px;
 }
 
-.photo {
-  border: 4px solid #f9131f;
-  width: 25%;
+.gallery div {
+  width: 350px;
   height: 200px;
+  object-fit: cover;
+  background-color: brown;
+  transition: 0.5s;
+}
+
+.gallery div:hover {
+  background-color: #f9131f;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  margin: 0 6.5%;
+  border-bottom: 4px solid #f9131f;
+  padding: 25px 0;
+  text-align: start;
+}
+.profile-info h2 {
+  margin: 0;
+}
+.img {
+  width: 130px;
+  height: 130px;
+  background-image: linear-gradient(to left, #c0373c, #f9131f);
+  border-radius: 50%;
+  margin-right: 25px;
+  overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 15px;
 }
 
-input[type="file"] {
-  display: none;
+.img-real {
+  width: 120px;
+  height: 120px;
+  background-color: aliceblue;
+  border-radius: 50%;
 }
-.add-photo {
-  color: #f9131f;
-  font-weight: bold;
+.galley-title {
+  text-align: start;
+  margin: 50px 6.5%;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.add-photo svg {
-  font-size: 60px;
+.galley-title svg {
+  font-size: 40px;
   color: #f9131f;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.galley-title svg:hover {
+  color: #f9131ea9;
+  transition: 0.5s;
 }
