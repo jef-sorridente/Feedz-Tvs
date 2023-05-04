@@ -20,8 +20,8 @@ const Login = () => {
   };
 
   return (
-    <div id="home">
-      <div className="container-box">
+    <div className="container-login">
+      <div className="container-login-box">
         <div className="information">
           <h2>Feedz 3S</h2>
           <p>Bem vindo ao Feedz / Tvs</p>
@@ -45,6 +45,7 @@ const Login = () => {
               className="input-text"
             />
             <input type="submit" value="Entrar" className="btn-submit" />
+            <Link to={"/"}>HOME</Link>
           </form>
         </div>
       </div>

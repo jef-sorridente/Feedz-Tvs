@@ -1,13 +1,12 @@
-#home {
+.container-login {
   width: 100vw;
   height: 100vh;
-  background-color: #ebebeb;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.container-box {
+.container-login-box {
   background-color: #fff;
   display: flex;
   border-radius: 25px;
@@ -16,7 +15,7 @@
   height: 60%;
 }
 
-.container-box h2 {
+.container-box h2, .login h2 {
   font-size: 2.3em;
 }
 
