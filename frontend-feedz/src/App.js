@@ -4,7 +4,7 @@ import "./App.css";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 // Hooks
-//import { useAuth } from "./hooks/useAuth";
+import { useAuth } from "./hooks/useAuth";
 
 // Components
 //import Navbar from "./components/Navbar/Navbar"
@@ -14,29 +14,37 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Home from "./pages/Home/Home";
 import Login from "./pages/Login/Login";
 import Carousel from "./pages/Carousel/Carousel";
-//import Carrosel from "./components/Carrosel"
 
 function App() {
-  {
-    /*const { auth, loading } = useAuth();
+  const { auth, loading } = useAuth();
 
   if (loading) {
-    return <p>Carregando...</p>
-  }*/
+    return <p>Carregando...</p>;
   }
+
   return (
     <div className="App">
       <BrowserRouter>
-        {/*<Navbar />*/}
-        {/* element={auth ? <Home /> : <Navigate to="/login" />}*/}
         <div className="container">
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/carousel" element={<Carousel />} />
+            <Route
+              path="/"
+              element={auth ? <Home /> : <Navigate to="/login" />}
+            />
+            <Route
+              path="/home"
+              element={auth ? <Home /> : <Navigate to="/login" />}
+            />
+            <Route
+              path="/login"
+              element={!auth ? <Login /> : <Navigate to="/" />}
+            />
+            <Route
+              path="/carousel"
+              element={auth ? <Carousel /> : <Navigate to="/login" />}
+            />
           </Routes>
         </div>
-        {/*<Footer />*/}
       </BrowserRouter>
     </div>
   );

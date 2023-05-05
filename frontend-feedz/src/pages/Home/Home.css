@@ -17,18 +17,17 @@
   margin-top: 50px;
 }
 
-.gallery div {
+.gallery div img {
   width: 350px;
   height: 200px;
   object-fit: cover;
-  background-color: brown;
   transition: 0.5s;
+  cursor: pointer;
 }
 
 .gallery div:hover {
-  background-color: #f9131f;
   transition: 0.5s;
-  cursor: pointer;
+  opacity: 60%;
 }
 
 .profile {
