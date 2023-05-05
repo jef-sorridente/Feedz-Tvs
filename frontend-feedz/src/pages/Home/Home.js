@@ -55,7 +55,6 @@ const Home = () => {
   const handleLogout = () => {
     dispatch(logout());
     dispatch(reset());
-
     navigate("/login");
   };
 
@@ -86,32 +85,43 @@ const Home = () => {
   const handleDelete = (id) => {
     dispatch(deletePhoto(id));
 
-   // resetComponentMessage();
+    // resetComponentMessage();
   };
 
   if (loading) {
     return <p>Carregando...</p>;
   }
-  
+
   return (
     <div className="container-gallery">
       <div className="profile">
         <div className="img">
-          <div className="img-real"></div>
+          {user.profileImage && (
+            <img
+              className="img-real"
+              src={`${uploads}/users/${user.profileImage}`}
+              alt={user.name}
+            />
+          )}
         </div>
-        <span onClick={handleLogout}>Sair</span>
         <div className="profile-info">
           <h2>{user.name}</h2>
           <p>{user.bio}</p>
           <p>Cargo do Cabra</p>
         </div>
+        <span onClick={handleLogout}>Sair</span>
       </div>
       <div className="galley-title">
         <h2>Fotos Publicadas</h2>
-        <form onSubmit={submitHandle}>
-          <input type="file" onChange={handleFile} />
-          <RiImageAddFill />
-          {!loadingPhoto && <input type="submit" value="Postar" />}
+        <form onSubmit={submitHandle} className="submit-photo">
+          <label htmlFor="photoPost">
+            <RiImageAddFill />
+          </label>
+          <input type="file" id="photoPost" onChange={handleFile} />
+
+          {!loadingPhoto && (
+            <input type="submit" value="Postar" className="bnt-submit" />
+          )}
           {loadingPhoto && <input type="submit" value="Aguarde..." disabled />}
         </form>
       </div>

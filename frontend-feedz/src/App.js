@@ -23,7 +23,7 @@ function App() {
   if (loading) {
     return <p>Carregando...</p>;
   }
-  //to={`/home/${user._id}`}
+
   return (
     <div className="App">
       <BrowserRouter>

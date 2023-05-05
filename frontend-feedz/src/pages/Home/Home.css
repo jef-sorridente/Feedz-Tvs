@@ -44,8 +44,8 @@
 .img {
   width: 130px;
   height: 130px;
-  background-image: linear-gradient(to left, #c0373c, #f9131f);
   border-radius: 50%;
+  border: 3px solid #c0373c;
   margin-right: 25px;
   overflow: hidden;
   display: flex;
@@ -54,8 +54,7 @@
 }
 
 .img-real {
-  width: 120px;
-  height: 120px;
+  width: 100%;
   background-color: aliceblue;
   border-radius: 50%;
 }
@@ -65,6 +64,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+.galley-title h2 {
+  margin: 0;
 }
 
 .galley-title svg {
@@ -77,4 +79,24 @@
 .galley-title svg:hover {
   color: #f9131ea9;
   transition: 0.5s;
+}
+
+#photoPost{
+  display: none;
+}
+
+.bnt-submit {
+  background-color: #f9131f;
+  border: none;
+  padding: 0 5px;
+  height: 20px;
+  color: #fff;
+  border-radius: 5px;
+}
+
+.submit-photo{
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
 }

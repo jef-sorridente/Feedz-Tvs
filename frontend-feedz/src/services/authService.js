@@ -20,9 +20,10 @@ const register = async (data) => {
 };
 
 // Logout do Usuário
-
 const logout = () => {
   localStorage.removeItem("user");
+  //Reload da pagina -- Verificar a forma correta de fazer
+  window.location.reload();
 };
 
 // Login do Usuário
