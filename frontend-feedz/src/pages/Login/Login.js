@@ -34,6 +34,28 @@ const Login = () => {
     dispatch(reset());
   }, [dispatch]);
 
+     /*
+  Botão para Modificar de Login p/ Cadastro
+  const [myClass, setMyClass] = useState("primaria");
+  function alternateClass() {
+    if (myClass === "primaria") {
+      setMyClass("secundaria");
+    } else {
+      setMyClass("primaria");
+    }
+  }
+  useEffect(() => {
+    const elemento = document.querySelector(".elemento-a-modificar");
+    elemento.classList.remove("primaria");
+    elemento.classList.remove("secundaria");
+    elemento.classList.add(myClass);
+  }, [myClass]);*/
+    /* 
+        Botão para Modificar de Login p/ Cadastro
+      <div className="elemento-a-modificar">
+        <button onClick={alternateClass}>Teste</button>
+      </div>*/
+      
   return (
     <div className="container-login">
       <div className="container-login-box">

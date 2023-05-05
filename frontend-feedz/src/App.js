@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 // Hooks
 import { useAuth } from "./hooks/useAuth";
+import { useSelector } from "react-redux";
 
 // Components
 //import Navbar from "./components/Navbar/Navbar"
@@ -17,11 +18,12 @@ import Carousel from "./pages/Carousel/Carousel";
 
 function App() {
   const { auth, loading } = useAuth();
+  const { user } = useSelector((state) => state.auth);
 
   if (loading) {
     return <p>Carregando...</p>;
   }
-
+  //to={`/home/${user._id}`}
   return (
     <div className="App">
       <BrowserRouter>
@@ -29,10 +31,16 @@ function App() {
           <Routes>
             <Route
               path="/"
-              element={auth ? <Home /> : <Navigate to="/login" />}
+              element={
+                auth ? (
+                  <Navigate to={`/home/${user._id}`} />
+                ) : (
+                  <Navigate to="/login" />
+                )
+              }
             />
             <Route
-              path="/home"
+              path="/home/:id"
               element={auth ? <Home /> : <Navigate to="/login" />}
             />
             <Route
