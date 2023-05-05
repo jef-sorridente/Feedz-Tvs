@@ -12,7 +12,6 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 // Redux
-import { logout, reset } from "../../slices/authSlice";
 import { getUserDetails } from "../../slices/userSlice";
 import {
   publishPhoto,
@@ -53,9 +52,8 @@ const Home = () => {
 
   // Faz Logout
   const handleLogout = () => {
-    dispatch(logout());
-    dispatch(reset());
-    navigate("/login");
+    localStorage.removeItem("user");
+    window.location.href = "/login";
   };
 
   const submitHandle = (e) => {

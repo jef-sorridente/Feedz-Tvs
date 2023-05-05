@@ -19,13 +19,13 @@ const register = async (data) => {
   }
 };
 
-// Logout do Usuário
+/*// Logout do Usuário
 const logout = () => {
   localStorage.removeItem("user");
-  //Reload da pagina -- Verificar a forma correta de fazer
-  window.location.reload();
+  
+  window.location.href = '/login';
 };
-
+*/
 // Login do Usuário
 const login = async (data) => {
   const config = requestConfig("POST", data);
@@ -47,7 +47,6 @@ const login = async (data) => {
 
 const authService = {
   register,
-  logout,
   login,
 };
 
