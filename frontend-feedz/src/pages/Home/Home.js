@@ -1,47 +1,62 @@
 import "./Home.css";
 
-// Components
-import { useParams, Link } from "react-router-dom";
-import { useState, useEffect } from "react";
-import { RiImageAddFill } from "react-icons/ri";
-import { BsXLg } from "react-icons/bs";
 import { uploads } from "../../utils/config";
 
-// Hooks
-//import { useAuth } from "../hooks/useAuth";
+// Components
+import { Link, NavLink, Navigate, useNavigate } from "react-router-dom";
+import { RiImageAddFill } from "react-icons/ri";
+
+//Hooks
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 // Redux
 import { logout, reset } from "../../slices/authSlice";
-import { profile } from "../../slices/userSlice";
-import { getPhotos, publishPhoto, deletePhoto } from "../../slices/photoSlice";
+import { getUserDetails } from "../../slices/userSlice";
+import {
+  publishPhoto,
+  getUserPhotos,
+  deletePhoto,
+} from "../../slices/photoSlice";
 
 //import { useState } from "react";
 
 const Home = () => {
+  const { id } = useParams();
+
+  const dispatch = useDispatch();
+
   const navigate = useNavigate();
+
+  const { user, loading } = useSelector((state) => state.user);
+  const {
+    photos,
+    loading: loadingPhoto,
+    error: errorPhoto,
+    message: messagePhoto,
+  } = useSelector((state) => state.photo);
 
   const [image, setImage] = useState("");
 
-  const dispatch = useDispatch();
-  const { user, message, error, loading } = useSelector((state) => state.user);
-  const { photos, loadingPhoto } = useSelector((state) => state.photo);
-
+  //Carrega o Usuário
   useEffect(() => {
-    dispatch(profile());
-    dispatch(getPhotos());
-  }, [dispatch]);
+    dispatch(getUserDetails(id));
+    dispatch(getUserPhotos(id));
+  }, [dispatch, id]);
 
-  const handleLogout = () => {
-    dispatch(logout());
-    dispatch(reset());
-    navigate("/login");
-  };
   const handleFile = (e) => {
     const image = e.target.files[0];
 
     setImage(image);
+  };
+
+  // Faz Logout
+  const handleLogout = () => {
+    dispatch(logout());
+    dispatch(reset());
+
+    navigate("/login");
   };
 
   const submitHandle = (e) => {
@@ -61,40 +76,23 @@ const Home = () => {
     formData.append("photo", photoFormData);
 
     dispatch(publishPhoto(formData));
+
+    //setTitle("");
+
+    //resetComponentMessage();
   };
 
   // Deletar a foto
   const handleDelete = (id) => {
     dispatch(deletePhoto(id));
+
+   // resetComponentMessage();
   };
 
   if (loading) {
     return <p>Carregando...</p>;
   }
-  {
-    /*
-  Botão para Modificar de Login p/ Cadastro
-  const [myClass, setMyClass] = useState("primaria");
-  function alternateClass() {
-    if (myClass === "primaria") {
-      setMyClass("secundaria");
-    } else {
-      setMyClass("primaria");
-    }
-  }
-  useEffect(() => {
-    const elemento = document.querySelector(".elemento-a-modificar");
-    elemento.classList.remove("primaria");
-    elemento.classList.remove("secundaria");
-    elemento.classList.add(myClass);
-  }, [myClass]);*/
-    /* 
-        Botão para Modificar de Login p/ Cadastro
-      <div className="elemento-a-modificar">
-        <button onClick={alternateClass}>Teste</button>
-      </div>*/
-  }
-
+  
   return (
     <div className="container-gallery">
       <div className="profile">
@@ -127,7 +125,7 @@ const Home = () => {
                   alt={photo.title}
                 />
               )}
-              <button onClick={() => handleDelete(photo._id)} />
+              <button onClick={() => handleDelete(photo._id)}>Apagar</button>
             </div>
           ))}
         {photos && photos.length === 0 && (
