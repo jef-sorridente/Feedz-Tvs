@@ -1,0 +1,22 @@
+.container-photos {
+  height: 100vh;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+}
+.photos{
+    height: 100%;
+    margin: 0;
+}
+
+.container{ 
+    width: 100vw;
+    margin: auto;
+}
+.slick-next{
+    display: none !important;
+}
+
+.slick-slider{
+    background-color: #000;
+}

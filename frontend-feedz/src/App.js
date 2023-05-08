@@ -48,7 +48,7 @@ function App() {
               element={!auth ? <Login /> : <Navigate to="/" />}
             />
             <Route
-              path="/carousel"
+              path="/carousel/:id"
               element={auth ? <Carousel /> : <Navigate to="/login" />}
             />
           </Routes>

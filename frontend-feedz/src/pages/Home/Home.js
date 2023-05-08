@@ -93,21 +93,26 @@ const Home = () => {
   return (
     <div className="container-gallery">
       <div className="profile">
-        <div className="img">
-          {user.profileImage && (
-            <img
-              className="img-real"
-              src={`${uploads}/users/${user.profileImage}`}
-              alt={user.name}
-            />
-          )}
+        <div className="profile-infos">
+          <div className="img">
+            {user.profileImage && (
+              <img
+                className="img-real"
+                src={`${uploads}/users/${user.profileImage}`}
+                alt={user.name}
+              />
+            )}
+          </div>
+          <div className="profile-info">
+            <h2>{user.name}</h2>
+            <p>{user.bio}</p>
+            <p>Cargo do Cabra</p>
+          </div>
         </div>
-        <div className="profile-info">
-          <h2>{user.name}</h2>
-          <p>{user.bio}</p>
-          <p>Cargo do Cabra</p>
+        <div className="profile-buttons">
+          <span onClick={handleLogout}>Sair</span>
+          <NavLink to={`/carousel/${user._id}`}>Demonstração</NavLink>
         </div>
-        <span onClick={handleLogout}>Sair</span>
       </div>
       <div className="galley-title">
         <h2>Fotos Publicadas</h2>
@@ -118,7 +123,7 @@ const Home = () => {
           <input type="file" id="photoPost" onChange={handleFile} />
 
           {!loadingPhoto && (
-            <input type="submit" value="Postar" className="bnt-submit" />
+            <input type="submit" value="Postar" className="btn-submit-photo" />
           )}
           {loadingPhoto && <input type="submit" value="Aguarde..." disabled />}
         </form>
@@ -126,14 +131,14 @@ const Home = () => {
       <div className="gallery">
         {photos &&
           photos.map((photo) => (
-            <div key={photo._id}>
+            <div key={photo._id} className="gallery-photos">
               {photo.image && (
                 <img
                   src={`${uploads}/photos/${photo.image}`}
                   alt={photo.title}
                 />
               )}
-              <button onClick={() => handleDelete(photo._id)}>Apagar</button>
+              <button onClick={() => handleDelete(photo._id)} className="btn-delet">Apagar</button>
             </div>
           ))}
         {photos && photos.length === 0 && (

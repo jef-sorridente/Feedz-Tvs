@@ -25,18 +25,45 @@
   cursor: pointer;
 }
 
-.gallery div:hover {
+.gallery-photos img:hover {
   transition: 0.5s;
-  opacity: 60%;
+  opacity: 85%;
 }
 
 .profile {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   margin: 0 6.5%;
   border-bottom: 4px solid #f9131f;
   padding: 25px 0;
   text-align: start;
+}
+.profile-infos {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+.profile-buttons {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-buttons a {
+  text-decoration: none;
+  color: #000;
+}
+
+.profile-buttons span {
+  cursor: pointer;
+}
+.profile-buttons a:hover {
+  color: #1f9b44;
+  transition: 0.3s;
+}
+.profile-buttons span:hover {
+  color: #f9131f;
+  transition: 0.3s;
 }
 .profile-info h2 {
   margin: 0;
@@ -81,20 +108,29 @@
   transition: 0.5s;
 }
 
-#photoPost{
+.gallery-photos {
+  display: flex;
+  flex-direction: column;
+}
+
+.btn-delet,
+.btn-submit-photo {
+  background-color: #f9131f;
+  border: none;
+  margin: 10px auto;
+  padding: 0 5px;
+  height: 20px;
+  width: 70px;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#photoPost {
   display: none;
 }
 
-.bnt-submit {
-  background-color: #f9131f;
-  border: none;
-  padding: 0 5px;
-  height: 20px;
-  color: #fff;
-  border-radius: 5px;
-}
-
-.submit-photo{
+.submit-photo {
   display: flex;
   flex-direction: column;
   justify-content: start;
