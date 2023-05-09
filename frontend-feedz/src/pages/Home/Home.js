@@ -3,7 +3,7 @@ import "./Home.css";
 import { uploads } from "../../utils/config";
 
 // Components
-import { Link, NavLink, Navigate, useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { RiImageAddFill } from "react-icons/ri";
 
 //Hooks
@@ -25,8 +25,6 @@ const Home = () => {
   const { id } = useParams();
 
   const dispatch = useDispatch();
-
-  const navigate = useNavigate();
 
   const { user, loading } = useSelector((state) => state.user);
   const {
@@ -74,7 +72,7 @@ const Home = () => {
 
     dispatch(publishPhoto(formData));
 
-    //setTitle("");
+    setImage("");
 
     //resetComponentMessage();
   };
@@ -138,7 +136,12 @@ const Home = () => {
                   alt={photo.title}
                 />
               )}
-              <button onClick={() => handleDelete(photo._id)} className="btn-delet">Apagar</button>
+              <button
+                onClick={() => handleDelete(photo._id)}
+                className="btn-delet"
+              >
+                Apagar
+              </button>
             </div>
           ))}
         {photos && photos.length === 0 && (

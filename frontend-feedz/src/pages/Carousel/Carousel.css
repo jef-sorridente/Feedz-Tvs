@@ -4,19 +4,19 @@
   justify-content: center;
   align-items: center;
 }
-.photos{
-    height: 100%;
-    margin: 0;
+.photos {
+  height: 100%;
+  margin: 0;
 }
 
-.container{ 
-    width: 100vw;
-    margin: auto;
+.container {
+  width: 100vw;
+  margin: auto;
 }
-.slick-next{
-    display: none !important;
+.slick-next {
+  display: none !important;
 }
 
-.slick-slider{
-    background-color: #000;
+.slick-slider {
+  background-color: #000;
 }

@@ -8,9 +8,8 @@ import { getUserPhotos } from "../../slices/photoSlice.js";
 import { useDispatch, useSelector } from "react-redux";
 
 // Hooks
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { render } from "react-dom";
 
 //Carousel
 import Slider from "react-slick";
@@ -22,13 +21,7 @@ const Carousel = () => {
 
   const dispatch = useDispatch();
 
-  const { user, loading } = useSelector((state) => state.user);
-  const {
-    photos,
-    loading: loadingPhoto,
-    error: errorPhoto,
-    message: messagePhoto,
-  } = useSelector((state) => state.photo);
+  const { photos, loading: loadingPhoto } = useSelector((state) => state.photo);
 
   //Carrega o Usuário
   useEffect(() => {
@@ -42,8 +35,9 @@ const Carousel = () => {
     infinite: true,
     fade: true,
     autoplay: true,
-    autoplaySpeed: 20000,
+    autoplaySpeed: 2000,
     cssEase: "linear",
+    pauseOnHover: false,
   };
 
   if (loadingPhoto) {
