@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import "./Carousel.css";
 
 import { uploads } from "../../utils/config";
@@ -8,9 +7,8 @@ import { getUserPhotos } from "../../slices/photoSlice.js";
 import { useDispatch, useSelector } from "react-redux";
 
 // Hooks
-import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import { render } from "react-dom";
+import { useEffect } from "react";
+import { NavLink, useParams } from "react-router-dom";
 
 //Carousel
 import Slider from "react-slick";
@@ -31,19 +29,14 @@ const Carousel = () => {
 
   //Configurações Slider
   const settings = {
-    infinite: true,
     speed: 500,
     infinite: true,
     fade: true,
     autoplay: true,
-    autoplaySpeed: 2000,
+    autoplaySpeed: 20000,
     cssEase: "linear",
     pauseOnHover: false,
   };
-
-  const [autoplaySpeed, setAutoplaySpeed] = useState("");
-
-  console.log("AutoPlay" + settings.autoplaySpeed);
 
   if (loadingPhoto) {
     return <p>Carregando...</p>;

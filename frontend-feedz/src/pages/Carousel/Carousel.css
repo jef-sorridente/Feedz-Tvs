@@ -17,6 +17,27 @@
   display: none !important;
 }
 
-.slick-slider{
-    background-color: #000;
+.slick-slider {
+  background-color: #000;
+}
+
+.btn-back-home {
+  background-color: #fff;
+  border: #000 1px solid;
+  padding: 5px 15px;
+  height: 25px;
+  color: #000;
+  border-radius: 10px;
+  cursor: pointer;
+  z-index: 1;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  opacity: 5%;
+  transition: 0.5s;
+}
+
+.btn-back-home:hover {
+  opacity: 100%;
+  transition: 0.5s;
 }
