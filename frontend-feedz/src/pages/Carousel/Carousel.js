@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Carousel.css";
 
 import { uploads } from "../../utils/config";
@@ -39,6 +39,10 @@ const Carousel = () => {
     cssEase: "linear",
     pauseOnHover: false,
   };
+
+  const [autoplaySpeed, setAutoplaySpeed] = useState("");
+
+  console.log("AutoPlay" + settings.autoplaySpeed);
 
   if (loadingPhoto) {
     return <p>Carregando...</p>;
