@@ -9,7 +9,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 // Hooks
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 import { render } from "react-dom";
 
 //Carousel
@@ -51,23 +51,26 @@ const Carousel = () => {
   }
 
   return (
-    <Slider {...settings}>
-      {photos &&
-        photos.map((photo) => (
-          <div key={photo._id} className="container-photos">
-            {photo.image && (
-              <img
-                src={`${uploads}/photos/${photo.image}`}
-                alt={photo.title}
-                className="photos"
-              />
-            )}
-          </div>
-        ))}
-      {photos && photos.length === 0 && (
-        <h2 className="no-photos">Ainda não há fotos publicadas.</h2>
-      )}
-    </Slider>
+    <div>
+      <Slider {...settings}>
+        {photos &&
+          photos.map((photo) => (
+            <div key={photo._id} className="container-photos">
+              {photo.image && (
+                <img
+                  src={`${uploads}/photos/${photo.image}`}
+                  alt={photo.title}
+                  className="photos"
+                />
+              )}
+            </div>
+          ))}
+        {photos && photos.length === 0 && (
+          <h2 className="no-photos">Ainda não há fotos publicadas.</h2>
+        )}
+      </Slider>
+      <NavLink className="btn-back-home" to="/">Voltar</NavLink>
+    </div>
   );
 };
 
