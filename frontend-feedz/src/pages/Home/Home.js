@@ -3,7 +3,7 @@ import "./Home.css";
 import { uploads } from "../../utils/config";
 
 // Components
-import { NavLink, useNavigate } from "react-router-dom";
+import { Link, NavLink, Navigate, useNavigate } from "react-router-dom";
 import { RiImageAddFill } from "react-icons/ri";
 import { AiOutlineReload } from "react-icons/ai";
 import Message from "../../components/Message/Message";
@@ -27,8 +27,6 @@ const Home = () => {
   const { id } = useParams();
 
   const dispatch = useDispatch();
-
-  const navigate = useNavigate();
 
   const { user, loading, error } = useSelector((state) => state.user);
   const {

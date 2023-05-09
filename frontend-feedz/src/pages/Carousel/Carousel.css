@@ -17,24 +17,6 @@
   display: none !important;
 }
 
-.slick-slider {
-  background-color: #000;
-}
-
-.btn-back-home {
-  background-color: #fff;
-  border-radius: 15px;
-  padding: 5px 10px;
-  color: #000;
-  z-index: 1;
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  opacity: 5%;
-  transition: 0.5s;
-}
-
-.btn-back-home:hover {
-  opacity: 100%;
-  transition: 0.5s;
+.slick-slider{
+    background-color: #000;
 }

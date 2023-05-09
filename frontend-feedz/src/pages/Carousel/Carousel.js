@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Carousel.css";
 
 import { uploads } from "../../utils/config";
@@ -9,7 +9,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 // Hooks
 import { useEffect, useState } from "react";
-import { NavLink, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { render } from "react-dom";
 
 //Carousel
@@ -22,13 +22,7 @@ const Carousel = () => {
 
   const dispatch = useDispatch();
 
-  const { user, loading } = useSelector((state) => state.user);
-  const {
-    photos,
-    loading: loadingPhoto,
-    error: errorPhoto,
-    message: messagePhoto,
-  } = useSelector((state) => state.photo);
+  const { photos, loading: loadingPhoto } = useSelector((state) => state.photo);
 
   //Carrega o Usuário
   useEffect(() => {
@@ -42,9 +36,14 @@ const Carousel = () => {
     infinite: true,
     fade: true,
     autoplay: true,
-    autoplaySpeed: 20000,
+    autoplaySpeed: 2000,
     cssEase: "linear",
+    pauseOnHover: false,
   };
+
+  const [autoplaySpeed, setAutoplaySpeed] = useState("");
+
+  console.log("AutoPlay" + settings.autoplaySpeed);
 
   if (loadingPhoto) {
     return <p>Carregando...</p>;

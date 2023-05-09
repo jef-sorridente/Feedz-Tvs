@@ -131,6 +131,21 @@
   display: none;
 }
 
+input[value="Postar"] {
+  background-color: #f9131f;
+}
+input[value="Aguarde..."] {
+  background-color: #8f8f8f;
+  border: none;
+  margin: 10px auto;
+  padding: 0 5px;
+  height: 20px;
+  width: 70px;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
 .submit-photo {
   display: flex;
   flex-direction: column;
