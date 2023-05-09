@@ -3,7 +3,7 @@ import "./Home.css";
 import { uploads } from "../../utils/config";
 
 // Components
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { RiImageAddFill } from "react-icons/ri";
 
 //Hooks
