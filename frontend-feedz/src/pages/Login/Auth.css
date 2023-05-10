@@ -160,7 +160,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  rotate: 0deg;
+  transition: 0.5s;
 }
+
+.btn-alternate-login:hover {
+  rotate: -360deg;
+  transition: 0.5s;
+}
+
 .btn-alternate-login svg {
   font-size: 3em;
   color: #f9131f;

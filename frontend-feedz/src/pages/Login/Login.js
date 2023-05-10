@@ -3,7 +3,7 @@ import "./Auth.css";
 // Components
 import { Link } from "react-router-dom";
 import Message from "../../components/Message/Message";
-import { IoIosAddCircleOutline } from "react-icons/io";
+import { VscDebugRestart } from "react-icons/vsc";
 
 // Hooks
 import { useState, useEffect } from "react";
@@ -45,6 +45,7 @@ const Login = () => {
       setMyClass("btn-login");
     }
   }
+
   useEffect(() => {
     const elemento = document.querySelector(".container-login-box");
     elemento.classList.remove("btn-login");
@@ -150,7 +151,7 @@ const Login = () => {
           </>
         )}
         <button onClick={alternateClass} className="btn-alternate-login">
-          <IoIosAddCircleOutline />
+          <VscDebugRestart />
         </button>
       </div>
     </div>
