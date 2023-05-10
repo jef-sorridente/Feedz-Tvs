@@ -125,7 +125,7 @@ const Login = () => {
                 />
                 <input
                   type="password"
-                  placeholder="Conferir a senha"
+                  placeholder="Confirmar a senha"
                   className="input-text-register"
                 />
                 <input
