@@ -15,7 +15,8 @@
   height: 60%;
 }
 
-.container-box h2, .login h2 {
+.container-box h2,
+.login h2 {
   font-size: 2.3em;
 }
 
@@ -34,15 +35,22 @@
   clip-path: polygon(0 0, 100% 0, 75% 100%, 0% 100%);
   color: var(--primary-text-color);
 }
-.login {
-  align-items: start;
-}
 
 .login form {
   display: flex;
   flex-direction: column;
   justify-content: star;
   width: 80%;
+}
+
+.information form {
+  display: flex;
+  flex-direction: column;
+  justify-content: star;
+  width: 60%;
+}
+.login div {
+  width: 450px;
 }
 .input-text,
 .btn-submit {
@@ -52,6 +60,20 @@
   margin: 15px 0;
   outline: none;
   font-size: 1.1em;
+}
+
+.input-text-register {
+  height: 30px;
+  border: 0;
+  border-bottom: 2px solid #fff;
+  margin: 15px 0;
+  outline: none;
+  font-size: 1.1em;
+  background-color: #00000000;
+  color: #fff;
+}
+.input-text-register::placeholder {
+  color: #fff;
 }
 
 .information p {
@@ -66,4 +88,106 @@
   width: 50%;
   cursor: pointer;
   margin: 15px auto;
+}
+
+.btn-submit-secundary {
+  background-color: #fff;
+  color: #f9131f;
+  font-weight: bold;
+  border: none;
+  border-radius: 20px;
+  height: 35px;
+  width: 50%;
+  cursor: pointer;
+  margin: 15px auto;
+}
+
+/*Botão para alternar entre cadastrar e logar*/
+.btn-login .information .information-title,
+.btn-login .information form,
+.btn-login .information p {
+  animation: animation-left 1s;
+}
+
+.btn-login .login .login-tilte,
+.btn-login .login form,
+.btn-login .login p {
+  animation: animation-right 1s;
+}
+
+.btn-cadastro .information .information-title-secundary,
+.btn-cadastro .information form,
+.btn-cadastro .information p {
+  animation: animation-right 1s;
+}
+
+.btn-cadastro .login .login-title-secundary,
+.btn-cadastro .login form,
+.btn-cadastro .login p {
+  animation: animation-left 1s;
+}
+
+.btn-login .information {
+  transition: 1s;
+}
+.information-title {
+  font-size: 2.3em;
+}
+.information-title-secundary {
+  width: 50%;
+  font-size: 2.3em;
+  margin-bottom: 20px;
+}
+
+.login-title-secundary {
+  color: #f9131f;
+}
+.btn-cadastro .information {
+  clip-path: polygon(0 0, 75% 0, 100% 100%, 0% 100%);
+  transition: 1s;
+}
+
+.btn-alternate-login {
+  position: fixed;
+  top: 48%;
+  left: 50%;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: #fff;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btn-alternate-login svg {
+  font-size: 3em;
+  color: #f9131f;
+}
+
+@keyframes animation-left {
+  0% {
+    position: relative;
+    left: -200px;
+    opacity: 0;
+  }
+  100% {
+    position: relative;
+    left: 0;
+    opacity: 100%;
+  }
+}
+
+@keyframes animation-right {
+  0% {
+    position: relative;
+    right: -200px;
+    opacity: 0;
+  }
+  100% {
+    position: relative;
+    right: 0;
+    opacity: 100%;
+  }
 }
