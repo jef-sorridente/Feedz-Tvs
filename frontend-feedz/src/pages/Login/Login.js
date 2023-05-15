@@ -150,9 +150,10 @@ const Login = () => {
             </div>
           </>
         )}
+        {/*
         <button onClick={alternateClass} className="btn-alternate-login">
           <VscDebugRestart />
-        </button>
+        </button> */}
       </div>
     </div>
   );
