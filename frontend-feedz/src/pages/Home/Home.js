@@ -14,11 +14,12 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 // Redux
-import { getUserDetails, resetMessage } from "../../slices/userSlice";
+import { getUserDetails } from "../../slices/userSlice";
 import {
   publishPhoto,
   getUserPhotos,
   deletePhoto,
+  resetMessage,
 } from "../../slices/photoSlice";
 
 //import { useState } from "react";
@@ -85,7 +86,7 @@ const Home = () => {
     setImage("");
 
     setImageUrl("");
-    // resetComponentMessage();
+    resetMessageComponent();
   };
 
   // Deletar a foto
@@ -98,6 +99,13 @@ const Home = () => {
   if (loading) {
     return <p>Carregando...</p>;
   }
+
+  // Reseta a mensagem
+  const resetMessageComponent = () => {
+    setTimeout(() => {
+      dispatch(resetMessage());
+    }, 3000);
+  };
 
   return (
     <div className="container-gallery">
@@ -151,6 +159,7 @@ const Home = () => {
           )}
           {loadingPhoto && <input type="submit" value="Aguarde..." disabled />}
           {errorPhoto && <Message msg={errorPhoto} type="error" />}
+          {messagePhoto && <Message msg={messagePhoto} type="sucess" />}
         </form>
       </div>
       <div className="gallery">
