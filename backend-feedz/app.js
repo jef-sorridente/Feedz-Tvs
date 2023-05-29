@@ -4,6 +4,7 @@ const express = require("express");
 const path = require("path");
 const cors = require("cors");
 
+const serverUrl = process.env.SERVER_URL;
 const port = process.env.PORT;
 
 const app = express();
