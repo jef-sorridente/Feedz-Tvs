@@ -1,5 +1,9 @@
+/*Local Padrão
 export const api = "http://localhost:5001/api";
-export const uploads = "http://localhost:5001/uploads";
+export const uploads = "http://localhost:5001/uploads";*/
+
+export const api = "http://192.168.0.250:5001/api";
+export const uploads = "http://192.168.0.250:5001/uploads";
 
 export const requestConfig = (method, data, token = null, image = null) => {
   let config;

@@ -13,7 +13,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { login, reset } from "../../slices/authSlice";
 
 const Login = () => {
-  const [email, setEmail] = useState("");
+  const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
 
   const dispatch = useDispatch();
@@ -24,7 +24,7 @@ const Login = () => {
     e.preventDefault();
 
     const user = {
-      email,
+      userName,
       password,
     };
     dispatch(login(user));
@@ -59,7 +59,7 @@ const Login = () => {
         {myClass === "btn-login" ? (
           <>
             <div className="information">
-              <h2 className="information-title">Feedz de Noticias</h2>
+              <h2 className="information-title">Feedz 3S</h2>
               <p>Bem vindo ao Feedz / Tvs</p>
             </div>
             <div className="login">
@@ -68,9 +68,9 @@ const Login = () => {
                 <form onSubmit={handleSubmit}>
                   <input
                     type="text"
-                    placeholder="E-mail"
-                    onChange={(e) => setEmail(e.target.value)}
-                    value={email || ""}
+                    placeholder="Usuário"
+                    onChange={(e) => setUserName(e.target.value)}
+                    value={userName || ""}
                     autoFocus
                     className="input-text"
                   />
@@ -115,7 +115,7 @@ const Login = () => {
                 />
                 <input
                   type="text"
-                  placeholder="E-mail"
+                  placeholder="Usuário"
                   className="input-text-register"
                 />
                 <input

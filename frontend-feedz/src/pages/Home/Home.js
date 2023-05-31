@@ -123,7 +123,6 @@ const Home = () => {
           <div className="profile-info">
             <h2>{user.name}</h2>
             <p>{user.bio}</p>
-            <p>Cargo do Cabra</p>
           </div>
         </div>
         <div className="profile-buttons">

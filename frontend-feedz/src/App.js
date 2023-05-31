@@ -7,10 +7,6 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { useAuth } from "./hooks/useAuth";
 import { useSelector } from "react-redux";
 
-// Components
-//import Navbar from "./components/Navbar/Navbar"
-//import Footer from "./components/Footer/Footer"
-
 //Pages
 import Home from "./pages/Home/Home";
 import Login from "./pages/Login/Login";

@@ -8,7 +8,7 @@ const conn = async () => {
       `mongodb+srv://${dbUser}:${dbPassword}@cluster0.vh726lg.mongodb.net/?retryWrites=true&w=majority`
     );
 
-    console.log("Conectou ao banco!");
+    console.log("Conectou ao banco! Feedz.");
   } catch (error) {
     console.log(error);
   }

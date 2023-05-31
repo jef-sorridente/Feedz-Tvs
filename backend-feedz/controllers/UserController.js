@@ -16,10 +16,10 @@ const generateToken = (id) => {
 
 // Registrar User e Logar
 const register = async (req, res) => {
-  const { name, email, password } = req.body;
+  const { name, userName, password } = req.body;
 
   //Checar se o User existe
-  const user = await User.findOne({ email });
+  const user = await User.findOne({ userName });
 
   if (user) {
     res.status(422).json({ errors: ["Por favor, utilize outro e-mail"] });
@@ -33,7 +33,7 @@ const register = async (req, res) => {
   //Criar User
   const newUser = await User.create({
     name,
-    email,
+    userName,
     password: passwordHash,
   });
 
@@ -59,9 +59,9 @@ const getCurrentUser = async (req, res) => {
 
 // Entra no User
 const login = async (req, res) => {
-  const { email, password } = req.body;
+  const { userName, password } = req.body;
 
-  const user = await User.findOne({ email });
+  const user = await User.findOne({ userName });
 
   //Checa se o User existe
   if (!user) {
